@@ -1,0 +1,3 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[-859.646862,289.9714930000002],[-859.646862,-277.73140700000016],[315.982653,-277.73140700000005],[315.982653,289.97149300000007],[-859.646862,289.9714930000002]]]},"properties":{"@geometry-type":"groundoverlay","name":"01. anjian 1","description":"MapName01. anjian 1Layers8","icon":"zhengti.png"}}
+]}
