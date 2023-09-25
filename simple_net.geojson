@@ -1,0 +1,11 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"Point","coordinates":[0,0]},"properties":{"ID":1}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[30,30]},"properties":{"ID":2}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[30,-30]},"properties":{"ID":3}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[60,60]},"properties":{"ID":4}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[60,0]},"properties":{"ID":5}},
+{"type":"Feature","geometry":{"type":"LineString","coordinates":[[0,0],[30,30]]},"properties":{"ID":6,"O":1,"D":2,"DIS":1}},
+{"type":"Feature","geometry":{"type":"LineString","coordinates":[[30,30],[60,60]]},"properties":{"ID":7,"O":2,"D":4,"DIS":1}},
+{"type":"Feature","geometry":{"type":"LineString","coordinates":[[30,30],[60,0]]},"properties":{"ID":8,"O":2,"D":5,"DIS":1}},
+{"type":"Feature","geometry":{"type":"LineString","coordinates":[[0,0],[30,-30]]},"properties":{"ID":9,"O":1,"D":3,"DIS":1}}
+]}
