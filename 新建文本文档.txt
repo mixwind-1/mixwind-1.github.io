@@ -1,0 +1,101 @@
+-- 设置场景摄像机类型为正交投影视角
+scene.setenv({camtype = 'ortho'})
+
+-- 设置场景摄像机
+local obj = scene.addobj('/res/world_countries.geojson')
+
+-- 获得网络图形数据
+local netgis = scene.addobj('network1.geojson')
+
+-- 解析网络数据
+local networkData = {
+    vertices = {
+        {id = 1, adj = {2, 3}},
+        {id = 2, adj = {1, 4}},
+        {id = 3, adj = {1, 4}},
+        {id = 4, adj = {2, 3}}
+    }
+}
+
+-- 广度优先搜索函数
+function BreadthFirstSearch(v)
+    local marked = {} -- 存储已访问的节点
+    local tovisit = {v} -- 待访问列表
+    local cur = 1 -- 当前访问指针
+
+    while tovisit[cur] do
+        local current = tovisit[cur] -- 当前节点
+        print(current) -- 访问并打印当前节点
+
+        local w = GetNextAdj(current, marked) -- 获得下一个邻接点
+
+        while w do
+            if not marked[w] then -- 如果邻接点未被标记
+                marked[w] = true -- 标记该邻接点，防止重复访问
+                table.insert(tovisit, w) -- 将邻接点插入待访问列表
+            end
+            w = GetNextAdj(current, marked) -- 获得下一个邻接点
+        end
+
+        cur = cur + 1 -- 设置访问指针
+    end
+end
+
+-- 获取指定顶点的下一个邻接点
+function GetNextAdj(vertex, marked)
+    local vertexData = networkData.vertices[vertex] -- 获取顶点的数据
+
+    if vertexData then
+        local adjVertices = vertexData.adj -- 获取顶点的邻接顶点列表
+
+        -- 返回邻接顶点列表中的下一个顶点
+        for i, adjVertex in ipairs(adjVertices) do
+            if not marked[adjVertex] then
+                return adjVertex
+            end
+        end
+    end
+
+    return nil -- 如果没有下一个邻接点，返回nil
+end
+
+local links = {} -- 初始化链接表
+
+-- 遍历图形数据
+for i, feature in ipairs(netgis:getchildren()) do
+    local centerx, centery = 0, 0 -- 初始化中心点坐标
+    local islink -- 定义链接标识
+
+    -- 遍历图形所有部分
+    for j, part in ipairs(feature:getchildren()) do
+        local points = part:getvertices() -- 得到顶点坐标
+
+        -- 遍历顶点
+        for k = 1, #points, 3 do
+            centerx = centerx + points[k] -- 累加x坐标
+            centery = centery + points[k + 1] -- 累加y坐标
+        end
+
+        centerx = centerx / (#points / 3) -- 求平均x坐标
+        centery = centery / (#points / 3) -- 求平均y坐标
+        islink = #points > 3 -- 设置链接标识
+    end
+
+    local data = feature:getdata() -- 得到图形属性
+    local lclr = islink and 'blue' or 'red' -- 设置颜色
+    local label = scene.addobj('label', {text = data['ID'], color = lclr, size = 3})
+    label:setpos(centerx, centery, 0) -- 设置标签位置
+
+    if islink then
+        -- 如果是链接则添加到表
+        table.insert(links, {id = data['ID'], x = centerx, y = centery})
+    end
+end
+
+-- 打印链接数据
+for i, link in ipairs(links) do
+    print(link.id, link.x, link.y)
+end
+
+-- 渲染场景
+scene.render()
