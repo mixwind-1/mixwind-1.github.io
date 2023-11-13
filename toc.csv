@@ -1,0 +1,126 @@
+﻿1 The Use of Succinct Models and Data Summaries,17
+	Readings for Chapter 1,17
+	1.1 Different Approaches for Solving Logistics Problems,17
+	1.2 An Example,18
+	1.3 Remarks,24
+		1.3.1 Usefulness and Flexibility,24
+		1.3.2 Accuracy of Its Results,25
+	Suggested Exercises,27
+2 Cost,31
+	Readings for Chapter 2,31
+	2.1 Initial Remarks,31
+	2.2 Holding Costs,33
+		2.2.1 Rent Cost,36
+		2.2.2 Waiting Cost,36
+	2.3 Transportation Costs,39
+		2.3.1 Relationship to Headways,40
+		2.3.2 Relationship to Distance,41
+		2.3.3 Relationship to Size; Capacity Restrictions,43
+		2.3.4 Relationship to Size: Multiple Transportation Modes,47
+	2.4 Handling Costs,48
+		2.4.1 Motion cost,50
+		2.4.2 The Lot Size Trade-Off with Handling Costs,52
+	2.5 Stochastic Effects,54
+		2.5.1 Stochastic Effects Using Public Carriers,55
+		2.5.2 Stochastic Effects Using Two Shipping Modes,58
+	Suggested Exercises,61
+	Glossary of Symbols,63
+3 Optimization Methods: One-to-One Distribution,65
+	Readings for Chapter 3,65
+	3.1 Initial Remarks,65
+	3.2 The Lot Size Problem with Constant Demand,66
+		3.2.1 Robustness in the Decision Variable,67
+		3.2.2 Robustness in Data Errors,67
+		3.2.3 Robustness in Model Errors,68
+		3.2.4 Error Combinations,69
+	3.3 The Lot Size Problem with Variable Demand,72
+		3.3.1 Solution when Holding Cost Is Close to the Rent Cost,72
+		3.3.2 Solution when Rent Cost Is Negligible,74
+		3.3.3 Numerical Solution,75
+		3.3.4 The Continuous Approximation Method,76
+	3.4 Other One-Dimensional Location Problems,80
+	3.5 Accuracy of the CA Expression,85
+		3.5.1 An Exact Procedure and Two Examples,85
+	3.6 Generalization of the CA Approach,89
+		3.6.1 Practical Considerations,91
+	3.7 Network Design Issues,91
+		3.7.1 The Effect of Flow Scale Economies on	Route Choice,92
+		3.7.2 Solution Methods,95
+	Suggested Exercises,100
+	Glossary of Symbols,106
+4 One-to-Many Distribution,108
+	Readings for Chapter 4,108
+	4.1 Initial Remarks,108
+	4.2 The Transportation Operation,110
+		4.2.1 Nondetailed Vehicle Routing Models: Many Vehicle Tours,112
+		4.2.2 Non-Detailed Vehicle Routing Models: Few Vehicle Tours,117
+		4.3 Identical Customers; Fixed Vehicle Loads,120
+		4.3.1 Very Cheap Items: ci << cr,121
+		4.3.2 More Expensive Items: ci >> cr,122
+		4.3.3 Inventory at the Origin,123
+	4.4 Identical Customers: Vehicle Loads Not Given,126
+		4.4.1 Limits to Route Length,127
+		4.4.2 Accounting for Pipeline Inventory Cost,130
+		4.4.3 Storage Restrictions,138
+	4.5 Implementation Considerations,140
+		4.5.1 Clarens and Hurdle's Case Study,141
+		4.5.2 Fine-Tuning Possibilities,142
+	4.6 Different Customers: Symmetric Strategies,148
+		4.6.1 Random Demand; Low Customer Demand,150
+		4.6.2 Random Demand: Uncertain Customer Requests,151
+		4.6.3 Dynamic Response to Uncertainty,155
+	4.7 Different Customers: Asymmetric Strategies,159
+		4.7.1 An Illustration,159
+		4.7.2 Discriminating Strategies,161
+	4.8 Other Extensions,163
+		4.8.1 Routing Peculiarities,163
+		4.8.2 Interactions With Production,165
+	Suggested Exercises,169
+	Glossary of Symbols,173
+5 One-To-Many Distribution with Transshipments,176
+	Readings for Chapter 5,176
+	5.1 Initial Remarks,176
+	5.2 Distribution with Transshipments,177
+		5.2.1 The Role of Terminals in One-to-Many Distribution,177
+		5.2.2 Design Objectives and Possible Simplifications,179
+	5.2 The One Transshipment Problem,186
+		5.2.1 Terminal Costs,186
+		5.3.2 Inbound Costs,188
+		5.3.3 Outbound Costs,188
+		5.3.4 The Design Problem,189
+		5.3.5 Example,193
+	5.4 Refinements and Extensions,196
+		5.4.1 Schedule Coordination,196
+		5.4.2 Constrained Design,200
+		5.4.3 Variable Demand,202
+		5.4.4 Discriminating Strategies,207
+	5.5 Multiple Transshipments,210
+		5.5.1 Example,211
+	5.6 Automatic Discretization,216
+	Suggested Exercises,222
+	Glossary of Symbols,228
+6 Many-To-Many Distribution,230
+	Readings for Chapter 6,230
+	6.1 Initial Remarks,230
+		6.1.1 The Break-Bulk Role of Terminals,232
+	6.2 Operation Without Transshipments,235
+	6.3 One Terminal Systems,238
+		6.3.1 Symmetric Strategies,239
+		6.3.2 Discriminating Strategies,243
+	6.4 Multi-Terminal Systems: One Transshipment,247
+		6.4.1 The Operational Problem,248
+		6.4.2 Strategic and Tactical Problems,257
+		6.4.3 Extensions,263
+	6.5 Multi-Terminal Systems: Multiple Transshipments,264
+		6.5.1 Two Transshipments Through BBTs,264
+		6.5.2 Many-To-Many Systems With Consolidation Terminals,266
+		6.5.3 Extensions,268
+	Suggested Exercises,275
+	Glossary of Symbols,282
+References,284
+Appendix A: Some Properties of the TSP and the VRP,292
+	TSP,292
+	VRP,295
+Appendix B,300
+	Simulated Annealing,300
+Index,303
